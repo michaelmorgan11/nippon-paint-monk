@@ -108,6 +108,14 @@ Michael Morgan column, and `image103` is the one on top.
 `assets/logos/nippon-paint.png` is NPAC's own mark, used in the hero lockup on a white chip
 because its blue wordmark has too little contrast directly on the dark ground.
 
+**Monk's logo ships in two variants.** `monk.png` is the supplied artwork, for light
+grounds (nav, footer). `monk-light.png` is derived from it by recolouring only the
+low-saturation wordmark pixels to `--dark-foreground`, for dark grounds (hero lockup,
+statement band). The orange marks are byte-identical between the two, so the variants
+cannot drift apart — regenerate `monk-light.png` from `monk.png` rather than sourcing a
+second file, since the deck's light version uses a different orange (`#EE5F00` against
+`#FE510E`).
+
 ### Source material
 
 - Discovery call, 2026-09-04 (HubSpot note 397175090877)
