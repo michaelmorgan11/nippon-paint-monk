@@ -15,18 +15,37 @@ Static site — no build step, no dependencies.
 ## Run it locally
 
 ```bash
-python3 -m http.server 8000
-# open http://localhost:8000
+npm install
+npm run dev      # http://localhost:5173
 ```
+
+`npm run build` emits static files to `dist/`. There is no framework and no JSX —
+`index.html`, `styles.css` and `app.js` are the whole site. Vite is here only to give
+v0 and Vercel a dev server and a build step to run.
 
 ## Deploy to Vercel
 
-1. Push this folder to a new GitHub repo.
-2. In Vercel, **Add New → Project**, import the repo.
-3. Framework preset: **Other**. Leave build command and output directory empty.
-4. Deploy.
+1. Push to GitHub (see below).
+2. Vercel → **Add New → Project** → import the repo.
+3. Vercel auto-detects **Vite**. Leave the build settings alone.
+4. Deploy. Every push to `main` redeploys.
 
-Vercel serves `index.html` at the root. Every push to `main` redeploys.
+## Pull into v0
+
+v0 imports a GitHub repo into a Vercel Sandbox, installs with the repo's lockfile and
+runs its dev server — which is why this repo carries a `package.json` and
+`package-lock.json` rather than being bare HTML.
+
+1. Make sure the [Vercel GitHub App](https://github.com/apps/vercel) can access the repo.
+   For a private repo you may need to grant it from
+   [GitHub App settings](https://github.com/settings/installations).
+2. In v0, start a new chat → **+** menu → **Import from…** → **Import from GitHub**.
+3. Paste the repo URL.
+4. Set **Base Branch** to `main` and **Root Directory** to `./`.
+5. Import.
+
+v0 does not write to `main`. The first code change creates an isolated working branch
+plus a preview deployment, and you publish through a pull request.
 
 ## Brand
 
