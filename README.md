@@ -39,6 +39,13 @@ script, so `vite.config.js` copies it through to `dist/` verbatim instead.
 
 ## Pull into v0
 
+> **Sandbox hosts.** Vite blocks unrecognised `Host` headers, and v0 serves the dev
+> server on a generated `*.vercel.run` hostname, so `vite.config.js` allows the
+> `.vercel.run` and `.vercel.app` domains. Without that you get
+> *"Blocked request. This host is not allowed."* Allowing the domain rather than one
+> host matters — the sandbox hostname changes every session.
+
+
 v0 imports a GitHub repo into a Vercel Sandbox, installs with the repo's lockfile and
 runs its dev server — which is why this repo carries a `package.json` and
 `package-lock.json` rather than being bare HTML.

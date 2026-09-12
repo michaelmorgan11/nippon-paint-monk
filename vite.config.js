@@ -8,6 +8,17 @@ import { readFileSync } from 'node:fs'
 // The trade-off is that vite refuses to bundle a non-module script and drops it from
 // the build, so copy it through to dist verbatim instead.
 export default defineConfig({
+  // v0 and other cloud sandboxes serve the dev server on a generated hostname.
+  // Vite blocks unknown Host headers by default (DNS-rebinding protection), so
+  // allow the sandbox domains rather than one host that changes per session.
+  server: {
+    host: true,
+    allowedHosts: ['.vercel.run', '.vercel.app', 'localhost']
+  },
+  preview: {
+    host: true,
+    allowedHosts: ['.vercel.run', '.vercel.app', 'localhost']
+  },
   plugins: [
     {
       name: 'copy-classic-script',
