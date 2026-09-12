@@ -77,10 +77,12 @@ mark{
 .section{max-width:1240px;margin:0 auto;padding:76px 32px}
 .section-dark{
   background:var(--dark);color:var(--dark-foreground);max-width:none;padding:76px max(6vw,32px);
+  display:grid;grid-template-columns:minmax(0,1176px);justify-content:center;
 }
-.section-dark>*{max-width:1176px;margin-left:auto;margin-right:auto}
-.section-secondary{background:var(--secondary);max-width:none;padding:76px 32px}
-.section-secondary>*{max-width:1176px;margin-left:auto;margin-right:auto}
+.section-secondary{
+  background:var(--secondary);max-width:none;padding:76px 32px;
+  display:grid;grid-template-columns:minmax(0,1176px);justify-content:center;
+}
 
 .eyebrow{
   font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
@@ -103,10 +105,10 @@ mark{
   display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center;
   padding:150px max(6vw,32px) 76px;
 }
-.opening h1{font-size:clamp(46px,5.4vw,78px);line-height:.9}
-.opening h1 .hero-cash{
+.opening h1{font-size:clamp(32px,3.5vw,50px);line-height:1.06;max-width:21ch}
+.hero-cash{
   display:block;margin-top:.08em;color:var(--primary);letter-spacing:-.02em;
-  font-size:clamp(96px,13vw,188px);line-height:.82;
+  font-size:clamp(66px,8.4vw,116px);line-height:.86;
   text-shadow:0 0 48px color-mix(in oklab,var(--primary) 55%,transparent),
               0 0 96px color-mix(in oklab,var(--primary) 22%,transparent);
 }
@@ -328,7 +330,7 @@ mark{
   .stat-strip{grid-template-columns:1fr}
   .stat-strip div{border-right:none;border-bottom:1px solid var(--border)}
   .stat-strip div:last-child{border-bottom:none}
-  .opening h1{font-size:57px}
+  .opening h1{font-size:36px}
   .section h2,.section-dark h2,.section-secondary h2,.roi-handoff h2{font-size:41px}
   .story-quote{font-size:23px}
   .compare-head{display:none}
@@ -341,4 +343,32 @@ mark{
   .milestone{grid-template-columns:34px 1fr;gap:10px}
   .milestone>b{grid-column:2;padding-top:0}
   .footer{padding:44px 20px}
+}
+
+/* ---------- hero lockup, figure ---------- */
+.lockup{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.lockup-monk{font-family:var(--font-display);font-size:27px;line-height:1;color:var(--dark-foreground)}
+.lockup-x{font-size:15px;color:color-mix(in oklab,var(--dark-foreground) 42%,transparent)}
+.lockup-logo{display:block;height:36px;width:auto;background:#fff;padding:6px 11px;border-radius:5px}
+
+.hero-figure{margin-top:26px}
+.hero-cash-label{
+  margin:10px 0 0;max-width:46ch;font-size:14.5px;line-height:1.5;
+  color:color-mix(in oklab,var(--dark-foreground) 66%,transparent);
+}
+
+/* ---------- customer logos on proof cards ---------- */
+.case-logo-wrap{height:38px;display:flex;align-items:center;margin-bottom:8px}
+.case-logo{max-height:30px;max-width:178px;width:auto;height:auto;display:block}
+
+/* ---------- team headshots ---------- */
+.person img{
+  display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:center top;
+  border-radius:6px;margin-bottom:14px;background:var(--secondary);
+}
+
+@media (max-width:820px){
+  .lockup-monk{font-size:23px}
+  .lockup-logo{height:30px}
+  .hero-figure{margin-top:20px}
 }

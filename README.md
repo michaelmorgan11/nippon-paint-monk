@@ -79,8 +79,20 @@ and every output recalculates from them.
 - Three-year benefit = three years of recurring value + the final-year release
   (the release comes out once and stays out, so it is not summed)
 
-Year-one return is calculated against the Full package at $84,000/yr. To change it,
-edit `ANNUAL_FEE` at the top of `app.js` and the `#o-plan` / `#o-fee` spans in `index.html`.
+Year-one return and payback are still calculated against $84,000/yr (`ANNUAL_FEE` at the
+top of `app.js`), but pricing is no longer shown on the page, so the tiles are labelled
+"Year-one return" and "Payback period" without naming a package. Change `ANNUAL_FEE` if the
+commercials move.
+
+## Images
+
+Headshots and logos are extracted from `Nippon Paint & Monk Partnership Overview.pptx`
+(`assets/team/`, `assets/logos/`). Headshots are mapped to names by the slide's own shape
+geometry and z-order rather than by eye — slide 17 carries two overlapping images in the
+Michael Morgan column, and `image103` is the one on top.
+
+`assets/logos/nippon-paint.png` is NPAC's own mark, used in the hero lockup on a white chip
+because its blue wordmark has too little contrast directly on the dark ground.
 
 ### Source material
 
