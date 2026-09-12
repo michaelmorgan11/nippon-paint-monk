@@ -19,9 +19,16 @@ npm install
 npm run dev      # http://localhost:5173
 ```
 
+You can also just open `index.html` directly in a browser — no server needed.
+
 `npm run build` emits static files to `dist/`. There is no framework and no JSX —
 `index.html`, `styles.css` and `app.js` are the whole site. Vite is here only to give
 v0 and Vercel a dev server and a build step to run.
+
+**Keep `app.js` a classic script.** Marking it `type="module"` makes the browser refuse
+to load it over `file://`, which silently kills the calculator, the scenario buttons and
+the DSO chart when the page is opened straight off disk. Vite won't bundle a non-module
+script, so `vite.config.js` copies it through to `dist/` verbatim instead.
 
 ## Deploy to Vercel
 
