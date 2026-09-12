@@ -28,6 +28,25 @@ python3 -m http.server 8000
 
 Vercel serves `index.html` at the root. Every push to `main` redeploys.
 
+## Brand
+
+Tokens, type scale and component treatments are lifted from Monk's executive partnership
+system, not approximated:
+
+| Token | Value | Use |
+| --- | --- | --- |
+| `--background` | `oklch(98.2% .006 77)` — warm cream | Page ground |
+| `--foreground` | `oklch(22% .006 55)` | Body text |
+| `--primary` | `oklch(68% .17 49)` — orange | Accent, emphasis, CTAs |
+| `--secondary` | `oklch(94.8% .008 78)` | Alternating section bands |
+| `--dark` | `oklch(30% .013 55)` | Hero, statement, trajectory, handoff |
+| `--highlight` | `oklch(95% .08 96)` | Marker underline on pull quotes |
+| `--success` | `oklch(49% .12 154)` | Completed milestones |
+
+Type is **Instrument Serif** at weight 400 for every heading and display number, **Inter**
+for body. Radii are 6–8px, cards sit on `--shadow-card`, and dark sections carry the orange
+radial glow. `<em>` renders orange inside headings; `<mark>` draws the yellow marker underline.
+
 ## Where the numbers come from
 
 The calculator mirrors the Proof of Value workbook. All six inputs are editable in the browser
